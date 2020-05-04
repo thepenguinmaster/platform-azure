@@ -113,7 +113,7 @@ def dev_image_pack(target, source, env):
     if '0' != env.verbose: cmd.append("-v")
     if env.baremetal == False:
         cmd.append("-h")
-        cmd.append( join(env.framework_dir, "Hardwares", "json", env.BoardConfig().get("build.variant") + ".json" ) )
+        cmd.append( join(env.framework_dir, "Hardware", env.BoardConfig().get("build.variant"), env.BoardConfig().get("build.variant") + ".json" ) )
     execute(cmd)        
 
 def dev_image_upload(target, source, env):
